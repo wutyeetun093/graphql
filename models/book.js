@@ -1,9 +1,10 @@
 const mongoose = require("mongoose");
 
 const Schema = mongoose.Schema;
+mongoose.set("useCreateIndex", true);
 
 const bookSchema = new Schema({
-  name: String,
+  name: { type: String, unique: true },
   genre: String,
   authorId: String
 });
